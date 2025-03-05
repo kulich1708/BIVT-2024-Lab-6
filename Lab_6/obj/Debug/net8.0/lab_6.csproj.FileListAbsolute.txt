@@ -1,0 +1,14 @@
+C:\Users\Влад\source\repos\Lab_6\lab_6\bin\Debug\net8.0\lab_6.exe
+C:\Users\Влад\source\repos\Lab_6\lab_6\bin\Debug\net8.0\lab_6.deps.json
+C:\Users\Влад\source\repos\Lab_6\lab_6\bin\Debug\net8.0\lab_6.runtimeconfig.json
+C:\Users\Влад\source\repos\Lab_6\lab_6\bin\Debug\net8.0\lab_6.dll
+C:\Users\Влад\source\repos\Lab_6\lab_6\bin\Debug\net8.0\lab_6.pdb
+C:\Users\Влад\source\repos\Lab_6\lab_6\obj\Debug\net8.0\lab_6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Влад\source\repos\Lab_6\lab_6\obj\Debug\net8.0\lab_6.AssemblyInfoInputs.cache
+C:\Users\Влад\source\repos\Lab_6\lab_6\obj\Debug\net8.0\lab_6.AssemblyInfo.cs
+C:\Users\Влад\source\repos\Lab_6\lab_6\obj\Debug\net8.0\lab_6.csproj.CoreCompileInputs.cache
+C:\Users\Влад\source\repos\Lab_6\lab_6\obj\Debug\net8.0\lab_6.dll
+C:\Users\Влад\source\repos\Lab_6\lab_6\obj\Debug\net8.0\refint\lab_6.dll
+C:\Users\Влад\source\repos\Lab_6\lab_6\obj\Debug\net8.0\lab_6.pdb
+C:\Users\Влад\source\repos\Lab_6\lab_6\obj\Debug\net8.0\lab_6.genruntimeconfig.cache
+C:\Users\Влад\source\repos\Lab_6\lab_6\obj\Debug\net8.0\ref\lab_6.dll
