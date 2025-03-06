@@ -4,6 +4,8 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using static Lab_6.Purple_5;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Lab_6
 {
@@ -136,7 +138,8 @@ namespace Lab_6
             }
             Purple_1.Participant.Sort(participants);
 
-            Purple_1.Participant.PrintHead();
+            string[] items = new string[] { "Name", "Surname", "TotalScore" };
+            PrintHead(items);
             for (int i = 0; i < 10; i++) participants[i].Print();
         }
         public void Task_2()
@@ -175,7 +178,8 @@ namespace Lab_6
 
             Purple_2.Participant.Sort(participants);
 
-            Purple_2.Participant.PrintHead();
+            string[] items = new string[] { "Name", "Surname", "Result" };
+            PrintHead(items);
             for (int i = 0; i < 10; i++) participants[i].Print();
         }
         public void Task_3()
@@ -219,9 +223,10 @@ namespace Lab_6
 
             Purple_3.Participant.SetPlaces(participants);
             Purple_3.Participant.Sort(participants);
-            Purple_3.Participant.PrintHead();
-            
-            for(int i = 0; i < 10; i++) participants[i].Print();
+
+            string[] items = new string[] { "Name", "Surname", "Score", "TopPlace", "TotalMark" };
+            PrintHead(items);
+            for (int i = 0; i < 10; i++) participants[i].Print();
         }
         public void Task_4()
         {
@@ -300,10 +305,29 @@ namespace Lab_6
             for (int i = 0; i < 20; i++)
             {
                 string[] answers = new string[] { animals[i], qualities[i], concept[i] };
+
                 research.Add(answers);
             }
+            TestCountVotes(research.Responses, 0, 2);
             research.Print();
 
+        }
+        public void TestCountVotes(Response[] responses, int responsesNumber, int questionNumber)
+        {
+            int result = responses[responsesNumber].CountVotes(responses, questionNumber);
+            Console.WriteLine(result);
+        }
+        public void PrintHead(string[] items)
+        {
+            foreach (string item in items)
+            {
+                Console.Write(PrintItem(item));
+            }
+            Console.WriteLine();
+        }
+        public string PrintItem(string item)
+        {
+            return item + new string(' ', 15 - item.Length);
         }
     }
 }

@@ -9,14 +9,6 @@ namespace Lab_6
 {
     public class Purple_5
     {
-        public static void PrintArray(string[] array)
-        {
-            foreach (var item in array) Console.WriteLine(item);
-        }
-        public static void PrintArray(int[] array)
-        {
-            foreach (var item in array) Console.WriteLine(item);
-        }
         public struct Response
         {
             private string _animal;
@@ -27,7 +19,7 @@ namespace Lab_6
             public string CharacterTrait => _characterTrait;
             public string Concept => _concept;
 
-            public Response(string animal,  string characterTrait, string concept)
+            public Response(string animal, string characterTrait, string concept)
             {
                 _animal = animal;
                 _characterTrait = characterTrait;
@@ -44,18 +36,29 @@ namespace Lab_6
                     switch (questionNumber) 
                     {
                         case 1:
-                            if (response.Animal == _animal) result++;
+                            if (response.Animal != null && response.Animal.Length > 0 && response.Animal == _animal) 
+                                result++;
                             break;
                         case 2:
-                            if (response.CharacterTrait == _characterTrait) result++;
+                            if (response.CharacterTrait != null && response.CharacterTrait.Length > 0 && response.CharacterTrait == _characterTrait) 
+                                result++;
                             break;
                         case 3:
-                            if (response.Concept == _concept) result++;
+                            if (response.Concept != null && response.Concept.Length > 0 && response.Concept == _concept) 
+                                result++;
                             break;
                     }
                 }
                 return result;
             }
+            public void Print()
+            {
+                Console.WriteLine(Animal);
+                Console.WriteLine(CharacterTrait);
+                Console.WriteLine(Concept);
+                Console.WriteLine();
+            }
+            
         }
         public struct Research
         {
@@ -114,9 +117,9 @@ namespace Lab_6
                     }
                 }
 
-                string[] uniqueAnswers = UniqueAnswers(answers);
-                int[] countAnswers = CalculateCountAnswers(answers, uniqueAnswers);
-                BubbleSort(countAnswers, uniqueAnswers);
+                string[] uniqueAnswers = _uniqueAnswers(answers);
+                int[] countAnswers = _calculateCountAnswers(answers, uniqueAnswers);
+                _bubbleSort(countAnswers, uniqueAnswers);
                 int lenNeed = 5;
                 if (uniqueAnswers.Length > lenNeed)
                 {
@@ -127,7 +130,7 @@ namespace Lab_6
                 return uniqueAnswers;
             }
 
-            public int[] CalculateCountAnswers(string[] answers, string[] uniqueAnswers)
+            private int[] _calculateCountAnswers(string[] answers, string[] uniqueAnswers)
             {
                 int[] result = new int[uniqueAnswers.Length];
 
@@ -137,7 +140,7 @@ namespace Lab_6
 
                 return result;
             }
-            public string[] UniqueAnswers(string[] answers)
+            private string[] _uniqueAnswers(string[] answers)
             {
                 string[] result = new string[answers.Length];
 
@@ -149,7 +152,7 @@ namespace Lab_6
 
                 return result;
             }
-            public void BubbleSort(int[] array1, string[] array2)
+            private void _bubbleSort(int[] array1, string[] array2)
             {
                 for (int i = 0; i < array1.Length; i++)
                 {
@@ -168,7 +171,7 @@ namespace Lab_6
                     }
                 }
             }
-            public static void PrintHead(int columnIndex)
+            private static void _printHead(int columnIndex)
             {
                 string[] columns = new string[] { "Animal", "Character trait", "Concept" };
                 Console.WriteLine(_printItem(columns[columnIndex]) + _printItem("Amount"));
@@ -181,7 +184,7 @@ namespace Lab_6
             {
                 for (int i = 0; i < 3; i++)
                 {
-                    PrintHead(i);
+                    _printHead(i);
 
                     string[] result = GetTopResponses(i + 1);
                     for (int j = 0; j < result.Length; j++)

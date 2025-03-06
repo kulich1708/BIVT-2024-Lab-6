@@ -130,7 +130,7 @@ namespace Lab_6
                 }
                 return group;
             }
-            public static void PrintHead()
+            private static void _printHead()
             {
                 Console.WriteLine(_printItem("Name") + _printItem("Surname") + _printItem("Time"));
             }
@@ -138,7 +138,7 @@ namespace Lab_6
             {
                 Console.Write(new string(' ', 15));
                 Console.WriteLine(_printItem(Name));
-                PrintHead();
+                _printHead();
                 for (int i = 0; i < _sportsmen.Length; i++)
                 {
                     _sportsmen[i].Print();

@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Влад\\source\\repos\\Lab_6\\lab_6\\lab_6.csproj": {}
+    "C:\\Users\\Влад\\source\\repos\\lab_6\\lab_6\\lab_6.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Влад\\source\\repos\\Lab_6\\lab_6\\lab_6.csproj": {
+    "C:\\Users\\Влад\\source\\repos\\lab_6\\lab_6\\lab_6.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Влад\\source\\repos\\Lab_6\\lab_6\\lab_6.csproj",
+        "projectUniqueName": "C:\\Users\\Влад\\source\\repos\\lab_6\\lab_6\\lab_6.csproj",
         "projectName": "lab_6",
-        "projectPath": "C:\\Users\\Влад\\source\\repos\\Lab_6\\lab_6\\lab_6.csproj",
+        "projectPath": "C:\\Users\\Влад\\source\\repos\\lab_6\\lab_6\\lab_6.csproj",
         "packagesPath": "C:\\Users\\Влад\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Влад\\source\\repos\\Lab_6\\lab_6\\obj\\",
         "projectStyle": "PackageReference",

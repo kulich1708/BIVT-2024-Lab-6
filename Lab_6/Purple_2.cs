@@ -59,10 +59,6 @@ namespace Lab_6
                 Array.Copy(sortedArray, array, array.Length);
             }
 
-            public static void PrintHead()
-            {
-                Console.WriteLine(_printItem("Name") + _printItem("Surname") + _printItem("Result"));
-            }
             public void Print()
             {
                 Console.WriteLine($"{_printItem(_name)} {_printItem(_surname)} {_printItem(Result.ToString())}");

@@ -14,12 +14,11 @@ namespace Lab_6
             private string _surname;
             private double[] _marks;
             private int[] _places;
-            private int _score;
             private int _currentJudge;
 
             public string Name => _name;
             public string Surname => _surname;
-            public int Score => _score;
+            public int Score { get; private set; }
             public double[] Marks
             {
                 get 
@@ -49,7 +48,6 @@ namespace Lab_6
                 _surname = surname;
                 _marks = new double[7];
                 _places = new int[7];
-                _score = 0;
                 _currentJudge = 0;
             }
             public void Evaluate(double result)
@@ -70,7 +68,7 @@ namespace Lab_6
                     for (int j = 0; j < participants.Length; j++)
                     {
                         sortedParticipants[j]._places[i] = j + 1;
-                        sortedParticipants[j]._score += (j + 1);
+                        sortedParticipants[j].Score += (j + 1);
                     }
 
                     Array.Copy(sortedParticipants, participants, participants.Length);
@@ -83,10 +81,7 @@ namespace Lab_6
                 var sortedArray = array.OrderBy(x => x.Score).ThenBy(x => x.Places.Min()).ThenByDescending(x => x.Marks.Sum()).ToArray();
                 Array.Copy(sortedArray, array, array.Length);
             }
-            public static void PrintHead()
-            {
-                Console.WriteLine(_printItem("Name") + _printItem("Surname") + _printItem("Score") + _printItem("TopPlace") + _printItem("TotalMark"));
-            }
+            
             public void Print()
             {
                 Console.WriteLine($"{_printItem(Name)} {_printItem(Surname)} {_printItem(Score.ToString())} {_printItem(Places.Min().ToString())} {_printItem(Math.Round(Marks.Sum(), 2).ToString())}");

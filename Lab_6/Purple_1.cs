@@ -16,14 +16,13 @@ namespace Lab_6
             private string _surname;
             private double[] _coefs;
             private int[,] _marks;
-            private double _total;
             private int _jumpId;
             private int _countJump;
             private int _countJudges;
 
             public string Name => _name;
             public string Surname => _surname;
-            public double TotalScore => _total;
+            public double TotalScore { get; private set; }
             public double[] Coefs
             {
                 get
@@ -60,8 +59,6 @@ namespace Lab_6
                 _countJudges = 7;
                 _coefs = new double[] { 2.5, 2.5, 2.5, 2.5 };
                 _marks = new int[_countJump, _countJudges];
-                _total = 0;
-                _jumpId = 0;
             }
             public void SetCriterias(double[] coefs)
             {
@@ -79,24 +76,20 @@ namespace Lab_6
                     _marks[_jumpId, i] = marks[i];
                 }
 
-                _total += (marks.Sum() - marks.Min() - marks.Max()) * _coefs[_jumpId];
+                TotalScore += (marks.Sum() - marks.Min() - marks.Max()) * _coefs[_jumpId];
                 _jumpId++;
             }
             public static void Sort(Participant[] array)
             {
                 if (array == null) return;
 
-                var sortedArray = array.OrderByDescending(s => s._total).ToArray();
+                var sortedArray = array.OrderByDescending(s => s.TotalScore).ToArray();
                 Array.Copy(sortedArray, array, array.Length);
             }
 
-            public static void PrintHead()
-            {
-                Console.WriteLine(_printItem("Name") + _printItem("Surname") + _printItem("TotalScore"));
-            }
             public void Print()
             {
-                Console.WriteLine($"{_printItem(_name)} {_printItem(_surname)} {_printItem(Math.Round(_total, 2).ToString())}");
+                Console.WriteLine($"{_printItem(_name)} {_printItem(_surname)} {_printItem(Math.Round(TotalScore, 2).ToString())}");
             }
             private static string _printItem(string item)
             {
