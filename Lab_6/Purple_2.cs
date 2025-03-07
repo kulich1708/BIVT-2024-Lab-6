@@ -14,12 +14,12 @@ namespace Lab_6
         {
             private string _name;
             private string _surname;
-            private double _distance;
+            private int _distance;
             private int[] _marks;
 
             public string Name => _name;
             public string Surname => _surname;
-            public double Distance => _distance;
+            public int Distance => _distance;
             public int[] Marks
             {
                 get
@@ -31,7 +31,7 @@ namespace Lab_6
                     return makrsCopy;
                 }
             }
-            public double Result { get; private set; }
+            public int Result { get; private set; }
 
             public Participant(string name, string surname)
             {
