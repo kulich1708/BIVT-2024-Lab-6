@@ -10,7 +10,7 @@ namespace Lab_6
 {
     public class Purple_2
     {
-        public class Participant
+        public struct Participant
         {
             private string _name;
             private string _surname;
